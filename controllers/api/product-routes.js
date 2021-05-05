@@ -11,7 +11,7 @@ router.get("/", (req, res) => {
     // ], 
     include:[ {
         model: Comment,
-        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        attributes: ['id', 'comment_text', 'product_id', 'user_id', 'created_at'],
         include: {
           model: User,
           attributes: ['username']
@@ -46,7 +46,7 @@ router.get('/:id', (req, res) => {
     include: [
       {
         model: Comment,
-        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        attributes: ['id', 'comment_text', 'product_id', 'user_id', 'created_at'],
         include: {
           model: User,
           attributes: ['username']
@@ -71,10 +71,10 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.post("/", withAuth, (req, res) => {
+router.post("/", (req, res) => {
   // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
   Product.create({
-    prodct_name: req.body.product_name,
+    product_name: req.body.product_name,
     price: req.body.price,
     user_id: req.session.user_id,
   })
@@ -84,3 +84,5 @@ router.post("/", withAuth, (req, res) => {
       res.status(500).json(err);
     });
 });
+
+module.exports = router
