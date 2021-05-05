@@ -1,6 +1,3 @@
-* {
-  box-sizing: border-box;
-}
 
 body, html {
   height: 100%;
@@ -34,4 +31,5 @@ button {
 
 button:hover {
   background-color: #3486eb;
+
 }
