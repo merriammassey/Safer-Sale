@@ -22,6 +22,15 @@ Product.init(
       type: DataTypes.DECIMAL,
       allowNull: false,
       isDecimal: true,
+    } ,
+      user_id: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: "User",
+          key: "id"
+        }
+
+      }
     },
     // stock: {
     //   type: DataTypes.INTEGER,
@@ -30,7 +39,7 @@ Product.init(
     //   isNumeric: true,
     // },
     // define columns
-  },
+
   {
     sequelize,
     timestamps: false,
