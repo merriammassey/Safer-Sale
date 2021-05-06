@@ -1,5 +1,3 @@
-const { response } = require("express");
-
 
 async function signupFormHandler(event){
     event.preventDefault();
@@ -8,7 +6,7 @@ async function signupFormHandler(event){
     const password = document.querySelector("#password-signup").value.trim();
 
     if (username && email && password) {
-      await fetch("/api/users", {
+      const response = await fetch("/api/users", {
         method: "Post",
         body: JSON.stringify({
           username,
@@ -19,6 +17,7 @@ async function signupFormHandler(event){
       })
         //check the response status
         if(response.ok){
+          console.log(response)
             console.log('success');
         } else {
             alert(response.statusText);
