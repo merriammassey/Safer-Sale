@@ -31,11 +31,7 @@ Post.init(
       },
     },
     location: {
-      type: DataTypes.STRING,
-      references: {
-        model: "user",
-        key: "location",
-      },
+      type: DataTypes.STRING
     },
   },
   {
