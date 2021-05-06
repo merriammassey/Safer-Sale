@@ -39,8 +39,9 @@ router.get('/:id', (req, res) => {
     },
     attributes: [
       'id',
-      'title',
+      'product_name',
       'price',
+      'user_id',
       'created_at',
     ],
     include: [

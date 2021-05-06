@@ -22,7 +22,7 @@ Product.init(
       type: DataTypes.DECIMAL,
       allowNull: false,
       isDecimal: true,
-    } ,
+    },
       user_id: {
         type: DataTypes.INTEGER,
         references: {
