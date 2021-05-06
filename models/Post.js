@@ -30,13 +30,6 @@ Post.init(
         key: "id",
       },
     },
-    location: {
-      type: DataTypes.STRING,
-      references: {
-        model: "user",
-        key: "location",
-      },
-    },
   },
   {
     sequelize,

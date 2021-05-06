@@ -16,7 +16,7 @@ router.get("/", (req, res) => {
       },
       {
         model: User,
-        attributes: ["username", "location"],
+        attributes: ["username"],
       },
     ],
   })
@@ -34,7 +34,6 @@ router.post("/", (req, res) => {
     description: req.body.description,
     price: req.body.price,
     user_id: req.body.user_id,
-    location: req.body.location,
   })
     .then((dbPostData) => res.json(dbPostData))
     .catch((err) => {
@@ -90,3 +89,5 @@ router.delete("/:id", (req, res) => {
       res.status(500).json(err);
     });
 });
+
+module.exports = router;

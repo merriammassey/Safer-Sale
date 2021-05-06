@@ -31,10 +31,9 @@ User.init(
         isEmail: true,
       },
     },
-    location: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+    //location: {
+    //  type: DataTypes.STRING,
+    //},
     password: {
       type: DataTypes.STRING,
       allowNull: false,

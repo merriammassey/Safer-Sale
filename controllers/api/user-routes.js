@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, Product, Comment} = require("../../models");
+const { User, Post, Comment } = require("../../models");
 
 // get all users
 router.get("/", (req, res) => {
@@ -21,18 +21,17 @@ router.get("/:id", (req, res) => {
     },
     include: [
       {
-        model: Product,
-        attributes: ["id", "product_name"],
+        model: Post,
+        attributes: ["id", "title"],
       },
       {
         model: Comment,
         attributes: ["id", "comment_text"],
         include: {
-          model: Product,
-          attributes: ["product_name"],
+          model: Post,
+          attributes: ["title"],
         },
       },
-      
     ],
   })
     .then((dbUserData) => {
