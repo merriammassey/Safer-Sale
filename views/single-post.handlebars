@@ -1,18 +1,27 @@
 
 
-{{#each Post}}
-<div class="product-card">
-  <div class="product-card-thumbnail">
-    <a href="#"><img src="https://placehold.it/180x180"/></a>
+
+
+<form class="post-form">
+  <div>
+    <label for="item-post">Item for Sale:</label>
+    <input type="text" id="item-post" />
   </div>
-  <h2 class="product-card-title"><a href="#">{{this.product_name}}</a></h2>
-  <span class="product-card-desc">{{}}</span>
-  <span class="product-card-price">${{this.price}}</span><span class="product-card-sale"></span>
-  <div class="product-card-colors">
-    <button href="#" class="product-card-color-option"><img src="https://placehold.it/30x30"/></button>
-    <button href="#" class="product-card-color-option"><img src="https://placehold.it/30x30"/></button>
-    <button href="#" class="product-card-color-option"><img src="https://placehold.it/30x30"/></button>
-    <button href="#" class="product-card-color-option"><img src="https://placehold.it/30x30"/></button>
+  <div>
+    <label for="description-post">Description: </label>
+    <input type="text" id="description-post" />
   </div>
-</div>
-{{/each}}
+  <div>
+    <label for="img">Select image:</label>
+    <input type="file" id="img" name="img" accept="image/*">
+    <input type="submit">
+  </div>
+  <div>
+    <label for="price-post">Price: </label>
+    <input type="password" id="price-post" />
+  </div>
+
+  <div>
+    <button type="submit">Ready for Sale</button>
+  </div>
+</form>
