@@ -2,28 +2,47 @@
 
 
 
-<form class="signup-form">
+
+<form class="new-post-form">
   <div>
-    <label for="username-signup">Item for Sale</label>
-    <input type="text" id="username-signup" />
+    <label for="item-post">Item for Sale:</label>
+    <input type="text" id="item-post" name= "item-post" />
   </div>
   <div>
-    <label for="email-signup">Description: </label>
-    <input type="text" id="email-signup" />
+    <label for="description-post">Description: </label>
+    <input type="text" id="description-post" name= "description-post" />
   </div>
   <div>
-    <label for="password-signup">Price: </label>
-    <input type="password" id="password-signup" />
+    <label for="img">Select image:</label>
+    <input type="file" id="img" name="img" accept="image/*">
   </div>
   <div>
-    <label for="password-signup">Price: </label>
-    <input type="password" id="password-signup" />
+    <label for="price-post">Price: $ </label>
+    <input type="text" id="price-post" name="price-post" />
   </div>
 
   <div>
-    <button type="submit">Post</button>
+    <button type="submit">Ready for Sale</button>
   </div>
 </form>
+
+<script src= "/javascript/post-product.js" ></script>
+
+
+{{#if posts.length}}
+<section>
+  <h2>Your Items for Sale</h2>
+  <ol>
+    {{#each posts as |post|}}
+    <li>
+      {{> post-info post}}
+      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
+
 
 
 {{!-- {{#each Post}}
