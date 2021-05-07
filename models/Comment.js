@@ -32,7 +32,10 @@ Comment.init(
         key: "id",
       },
     },
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7940f979b280fcb0379cfefd8018302474947cb5
   },
   {
     sequelize,

@@ -1,1 +1,17 @@
+
+<h1>jude was here</h1>
+<div class="product-card">
+{{#each posts}}
+  <div class="product-card-thumbnail">
+    <a href="#"><img src="https://placehold.it/180x180"/></a>
+  </div>
+  <h2 class="product-card-title"><a href="#">Hello{{this.product_name}}</a></h2>
+  <span class="product-card-desc">{{this.description}}</span>
+  <span class="product-card-price">{{this.price}}</span><span class="product-card-sale"></span>
+  <div class="product-card-colors">
+    <button href="#" class="product-card-color-option"><img src="https://placehold.it/30x30"/></button>
+  </div>
+{{/each}}
+</div>
 <h1>This is the homepage, where all products/ services are displayed to be commented and for the sale to be conducted</h1>
+
