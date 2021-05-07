@@ -1,6 +1,5 @@
 const router = require("express").Router();
-const { User, Post, Comment} = require("../../models");
-
+const { User, Post, Comment } = require("../../models");
 
 // get all users
 router.get("/", (req, res) => {
@@ -54,6 +53,7 @@ router.post("/", (req, res) => {
     username: req.body.username,
     email: req.body.email,
     password: req.body.password,
+   
   })
     .then((dbUserData) => {
       req.session.save(() => {
