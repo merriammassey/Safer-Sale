@@ -1,29 +1,29 @@
+
+
+<link rel="stylesheet" href="/stylesheets/post.css">
+
 <h1>this is the user dashboard, where they can post what they have for sale.</h1>
 
+<form class="form-style-9 new-post-form">
+<ul>
+<li>
+    <input type="text" class="field-style field-split align-left" placeholder="Title" name= "item-post" />
 
-
-
-<form class="new-post-form">
-  <div>
-    <label for="item-post">Item for Sale:</label>
-    <input type="text" id="item-post" name= "item-post" />
-  </div>
-  <div>
-    <label for="description-post">Description: </label>
-    <input type="text" id="description-post" name= "description-post" />
-  </div>
-  <div>
+</li>
+<li>
+    <input type="text" class="field-style field-split align-left" placeholder="Price" name="price-post"/>
+    
+</li>
+<li>
+<textarea name="field5" class="field-style" placeholder="Item Description" name= "description-post"></textarea>
     <label for="img">Select image:</label>
     <input type="file" id="img" name="img" accept="image/*">
   </div>
-  <div>
-    <label for="price-post">Price: $ </label>
-    <input type="text" id="price-post" name="price-post" />
-  </div>
-
-  <div>
-    <button type="submit">Ready for Sale</button>
-  </div>
+</li>
+<li>
+<input type="submit" value="Add Item" />
+</li>
+</ul>
 </form>
 
 <script src= "/javascript/post-product.js" ></script>
