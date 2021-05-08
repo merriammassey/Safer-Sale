@@ -5,15 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Safer Sale</title>
-  <link rel="stylesheet" href="/stylesheets/header.css">
   <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="/stylesheets/header.css">
 </head>
 
 <body>
   <div class="wrapper">
     <header>
 
-<!-- NOTE: This is the off-canvas menu that appears when you click on the hamburger menu on smaller screens. Everything in the `.off-canvas` div belongs in `src/layouts/default.html`. Copy this section into the `default.html` file and remove it from this file.  -->
 <div class="off-canvas ecommerce-header-off-canvas position-left" id="ecommerce-header" data-off-canvas>
 <div class="off-canvas-content" data-off-canvas-content>
   <div class="ecommerce-header-top show-for-large">
@@ -26,7 +25,7 @@
           <li><a href="/">Home</a></li>
           <li><a href="#">Create an Account</a></li>
           <li><a href="/dashboard">My Account</a></li>
-          <li><a href="#">Logout</a></li>
+          <li><a href="/login">Logout</a></li>
           <li><a href="/dashboard">The Mission</a></li
           <ul class="menu">
           <li><input type="search" placeholder="Search"></li>
@@ -37,13 +36,9 @@
       </div>
     </div>
   </div>
-  <div class="ecommerce-header-mobile hide-for-large">
-    <div class="ecommerce-header-mobile-left">
-    <div class="ecommerce-header-mobile-right">
-      <i class="fa fa-shopping-cart"></i>
-    </div>
-  </div>
 </div>
+</div>
+    </header>
     <main>
       {{{ body }}}
     </main>
