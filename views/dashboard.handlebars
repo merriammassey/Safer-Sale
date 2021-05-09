@@ -1,8 +1,48 @@
-<h1>this is the user dashboard, where they can post what they have for sale.</h1>
+
+
+<link rel="stylesheet" href="/stylesheets/post.css">
 
 
 
+<form class="form-style-9 new-post-form">
+<ul>
+<li>
+    <input type="text" class="field-style field-split align-left" placeholder="Title" name= "item-post" />
 
+</li>
+<li>
+    <input type="text" class="field-style field-split align-left" placeholder="Price" name="price-post"/>
+    
+</li>
+<li>
+<textarea name="field5" class="field-style" placeholder="Item Description" name= "description-post"></textarea>
+    <label for="img">Select image:</label>
+    <input type="file" id="img" name="img" accept="image/*">
+  </div>
+</li>
+<li>
+<input type="submit" value="Add Item" />
+</li>
+</ul>
+</form>
+
+
+
+{{#if posts.length}}
+<section>
+  <h2>Your Items for Sale</h2>
+  <ol>
+    {{#each posts}}
+    <li>
+      {{> post-info post}}
+      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
+
+<script src= "/javascript/post-product.js" ></script>
 
 
 {{!-- {{#each Post}}

@@ -16,7 +16,7 @@ router.get("/", (req, res) => {
       },
       {
         model: User,
-        attributes: ["username"],
+        attributes: ["username", "location"],
       },
     ],
   })
@@ -34,9 +34,54 @@ router.get("/", (req, res) => {
     });
 });
 
+router.get("/post/:id", (req, res) => {
+  Post.findOne({
+    where: {
+      id: req.params.id,
+    },
+    attributes: ["id", "title", "description", "price", "created_at"],
+    include: [
+      {
+        model: Comment,
+        attributes: ["id", "comment_text", "post_id", "user_id", "created_at"],
+        include: {
+          model: User,
+          attributes: ["username", "location"],
+        },
+      },
+      {
+        model: User,
+        attributes: ["username","location"],
+      },
+    ],
+  })
+    .then((dbPostData) => {
+      if (!dbPostData) {
+        res.status(404).json({ message: "No post found with this id" });
+        return;
+      }
+
+      const post = dbPostData.get({ plain: true });
+
+      res.render("single-post", {post,loggedIn: req.session.loggedIn,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+
+
 router.get("/login", (req, res) => {
   res.render("login");
 });
+
+router.get("/signup", (req, res) => {
+  res.render("sign-up");
+});
+
 
 router.get("/dashboard", (req, res) => {
   res.render("dashboard");

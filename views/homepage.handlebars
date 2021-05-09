@@ -1,17 +1,35 @@
 
-<h1>jude was here</h1>
-<div class="product-card">
+
 {{#each posts}}
-  <div class="product-card-thumbnail">
-    <a href="#"><img src="https://placehold.it/180x180"/></a>
+<html lang="en">
+
+<head>
+  <title>Harvest vase</title>
+  <link href="https://fonts.googleapis.com/css?family=Bentham|Playfair+Display|Raleway:400,500|Suranna|Trocchi" rel="stylesheet">
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="product-img">
+      <img src="https://images.unsplash.com/photo-1505751171710-1f6d0ace5a85?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80" height="420" width="325">
+    </div>
+    <div class="product-info">
+      <div class="product-text">
+        <h1>{{this.title}}</h1>
+        <h2>Being Sold by {{user.username}} located in {{user.location}}</h2>
+        <p>{{this.description }}</p>
+      </div>
+      <div class="product-price-btn">
+        <p><span>{{this.price}}</span>$</p>
+        <button type="button">(email to seller)Contact Seller</button>
+      </div>
+    </div>
   </div>
-  <h2 class="product-card-title"><a href="#">Hello{{this.product_name}}</a></h2>
-  <span class="product-card-desc">{{this.description}}</span>
-  <span class="product-card-price">{{this.price}}</span><span class="product-card-sale"></span>
-  <div class="product-card-colors">
-    <button href="#" class="product-card-color-option"><img src="https://placehold.it/30x30"/></button>
-  </div>
+
+</body>
+
+</html>
 {{/each}}
-</div>
-<h1>This is the homepage, where all products/ services are displayed to be commented and for the sale to be conducted</h1>
+
+
 
