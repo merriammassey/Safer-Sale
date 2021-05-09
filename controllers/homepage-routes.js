@@ -78,6 +78,11 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
+router.get("/signup", (req, res) => {
+  res.render("sign-up");
+});
+
+
 router.get("/dashboard", (req, res) => {
   res.render("dashboard");
 });

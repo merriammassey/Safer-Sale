@@ -1,13 +1,10 @@
-<div class="product-card">
-{{#each posts}}
-  <div class="product-card-thumbnail">
-    <a href="#"><img src="https://placehold.it/180x180"/></a>
+<article class="post">
+  <div class="title">
+
   </div>
-  <h2 class="product-card-title"><a href="#">Hello{{this.product_name}}</a></h2>
-  <span class="product-card-desc">{{this.description}}</span>
-  <span class="product-card-price">{{this.price}}</span><span class="product-card-sale"></span>
-  <div class="product-card-colors">
-    <button href="#" class="product-card-color-option"><img src="https://placehold.it/30x30"/></button>
+  <div class="meta">
+    {{title}} by {{user.username}} on {{format_date created_at}}
+    |
+    <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
   </div>
-{{/each}}
-</div>
+</article>
