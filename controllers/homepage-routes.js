@@ -16,7 +16,7 @@ router.get("/", (req, res) => {
       },
       {
         model: User,
-        attributes: ["username", "location"],
+        attributes: ["username", "location", "email"],
       },
     ],
   })
