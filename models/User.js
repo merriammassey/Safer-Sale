@@ -31,9 +31,10 @@ User.init(
         isEmail: true,
       },
     },
-    //location: {
-    //  type: DataTypes.STRING,
-    //},
+    location: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -41,7 +42,6 @@ User.init(
         len: [6],
       },
     },
-  
   },
   {
     hooks: {

@@ -6,22 +6,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Safer Sale</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="/stylesheets/header.css">
 </head>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+<div class="header">
+  <a href="/" class="logo">Safer Sale</a>
+  <div class="header-right">
+    <a class="active" href="/">Home</a>
+    <a href="/login">My Account</a>
+    <a href="/signup">Sign Up</a>
+    <a href="#about">About Us</a>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/">logout</a>
+  </div>
+</div>
+
+<div style="padding-left:20px">
+  <h1>A Safer place to sell your stuff</h1>
+  <p>One person's junk is another's treasure and we are deicated to helping you perform those transactions safely</p>
+</div>
+
+</body>
+</html>
 
 <body>
-  <div class="wrapper">
-    <header>
-      <h1>
-        <a href="/">Safer Sale</a>
-      </h1>
-      <nav>
-        {{!-- {{#if loggedIn}} --}}
-        <a href="/dashboard">dashboard</a>
-        <button id="logout" class="btn-no-style">logout</button>
-        {{!-- {{else}} --}}
-        <a href="/login">login</a>
-        {{!-- {{/if}} --}}
-      </nav>
+  
     </header>
     <main>
       {{{ body }}}
