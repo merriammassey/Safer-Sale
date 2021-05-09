@@ -26,7 +26,7 @@ router.get("/", (req, res) => {
       const posts = dbPostData.map((post) => post.get({ plain: true }));
       console.log(posts);
       //res.render("homepage", {msg: 'this is the homepage'})
-      res.render("homepage", {posts});
+      res.render("homepage", { posts });
     })
     .catch((err) => {
       console.log(err);
@@ -44,6 +44,14 @@ router.get("/dashboard", (req, res) => {
 
 router.get("/", (req, res) => {
   res.render("logout");
+});
+
+router.get("/create-post", (req, res) => {
+  res.render("create-post");
+});
+
+router.get("/upload-image", (req, res) => {
+  res.render("upload-image");
 });
 
 module.exports = router;

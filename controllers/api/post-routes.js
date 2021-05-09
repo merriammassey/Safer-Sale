@@ -33,8 +33,8 @@ router.post("/", (req, res) => {
     title: req.body.title,
     description: req.body.description,
     price: req.body.price,
-    user_id: req.body.user_id,
-    location: req.body.location,
+    user_id: req.session.user_id,
+    //location: req.body.location,
   })
     .then((dbPostData) => res.json(dbPostData))
     .catch((err) => {
@@ -91,8 +91,4 @@ router.delete("/:id", (req, res) => {
     });
 });
 
-
 module.exports = router;
-
-
-

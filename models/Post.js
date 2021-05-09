@@ -23,6 +23,10 @@ Post.init(
       type: DataTypes.DECIMAL,
       allowNull: false,
     },
+    image: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
@@ -31,7 +35,7 @@ Post.init(
       },
     },
     location: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
     },
   },
   {
