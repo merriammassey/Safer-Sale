@@ -31,10 +31,6 @@ Post.init(
       },
     },
 
-    location: {
-      type: DataTypes.STRING
-    },
-
   },
   {
     sequelize,
