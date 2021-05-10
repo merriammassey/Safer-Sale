@@ -1,8 +1,7 @@
 const router = require("express").Router();
 const sequelize = require("../config/connection");
-const { Post, User, Comment} = require("../models");
+const { Post, User, Comment } = require("../models");
 const withAuth = require("../utils/auth");
-
 
 router.get("/", withAuth, (req, res) => {
   console.log(req.session);
@@ -16,7 +15,8 @@ router.get("/", withAuth, (req, res) => {
       "title",
       "description",
       "price",
-      'user_id',
+      "image_url",
+      "user_id",
       "created_at",
     ],
     include: [
@@ -42,10 +42,7 @@ router.get("/", withAuth, (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
-});;
-
-module.exports = router;
-
+});
 
 router.get("/edit/:id", withAuth, (req, res) => {
   Post.findByPk(req.params.id, {

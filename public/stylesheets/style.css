@@ -1,5 +1,5 @@
-
-body, html {
+body,
+html {
   height: 100%;
   padding: 0;
   margin: 0;
@@ -7,11 +7,17 @@ body, html {
   color: #333;
 }
 
+h1 {
+  text-align: center;
+  align-items: center;
+  padding-top: 10%;
+}
+
 a {
   text-decoration: none;
   color: #225ca3;
   font-weight: bold;
-  transition: color .1s;
+  transition: color 0.1s;
 }
 
 a:hover {
@@ -24,16 +30,14 @@ button {
   padding: 1%;
   color: white;
   font-weight: bold;
-  transition: background-color .1s;
+  transition: background-color 0.1s;
   cursor: pointer;
   border-radius: 5px;
 }
 
 button:hover {
   background-color: #3486eb;
-
 }
-
 
 body {
   background-color: #e6f7bf;
@@ -82,13 +86,13 @@ body {
 
 .product-text h1,
 .product-price-btn p {
-  font-family: 'Bentham', serif;
+  font-family: "Bentham", serif;
 }
 
 .product-text h2 {
   margin: 0 0 47px 38px;
   font-size: 13px;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 400;
   text-transform: uppercase;
   color: #d2d2d2;
@@ -98,7 +102,7 @@ body {
 .product-text p {
   height: 125px;
   margin: 0 0 0 38px;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   color: #8d8d8d;
   line-height: 1.7em;
   font-size: 15px;
@@ -118,7 +122,7 @@ body {
   position: absolute;
   top: -13px;
   height: 50px;
-  font-family: 'Trocchi', serif;
+  font-family: "Trocchi", serif;
   margin: 0 0 0 38px;
   font-size: 28px;
   font-weight: lighter;
@@ -128,7 +132,7 @@ body {
 span {
   display: inline-block;
   height: 50px;
-  font-family: 'Suranna', serif;
+  font-family: "Suranna", serif;
   font-size: 34px;
 }
 
@@ -141,7 +145,7 @@ span {
   box-sizing: border-box;
   border: transparent;
   border-radius: 60px;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 14px;
   font-weight: 500;
   text-transform: uppercase;
@@ -155,5 +159,3 @@ span {
 .product-price-btn button:hover {
   background-color: #79b0a1;
 }
-
-

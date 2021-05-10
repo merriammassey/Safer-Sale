@@ -23,6 +23,11 @@ Post.init(
       type: DataTypes.DECIMAL,
       allowNull: false,
     },
+    image_url: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      defaultValue: null,
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {

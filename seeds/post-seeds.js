@@ -11,6 +11,7 @@ const postdata = [
     title: "Morbi non quam nec dui luctus rutrum.",
     description:"this is just aplace holding description for the website, jhdfjdfjhdfsjhdfsajhdfs",
     price: 35.0,
+    
     user_id: 8,
   },
   {

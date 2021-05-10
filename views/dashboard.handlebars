@@ -1,13 +1,20 @@
-
-
 <link rel="stylesheet" href="/stylesheets/post.css">
 
 
 
-<form class="form-style-9 new-post-form">
-<ul>
-<li>
-    <input type="text" class="field-style field-split align-left" placeholder="Title" name= "item-post" />
+<form action="/api/posts" enctype="multipart/form-data" method="post" class="form-style-9 new-post-form">
+  <ul>
+    <li>
+      <input type="text" class="field-style field-split align-left" placeholder="Title" name="title" />
+    </li>
+    <li>
+      <input type="text" class="field-style field-split align-left" placeholder="Price" name="price" />
+    </li>
+    <li>
+      <textarea class="field-style" placeholder="Item Description" name="description"></textarea>
+      <label for="file-to-upload">Select image:</label>
+      <input type="file" name="file-to-upload">
+
 
 </li>
 <li>
@@ -24,6 +31,7 @@
 <input type="submit" value="Add Item" />
 </li>
 </ul>
+
 </form>
 
 
@@ -42,22 +50,22 @@
 </section>
 {{/if}}
 
-<script src= "/javascript/post-product.js" ></script>
+<!--<script src="/javascript/post-product.js"></script>-->
 
 
 {{!-- {{#each Post}}
 <div class="product-card">
   <div class="product-card-thumbnail">
-    <a href="#"><img src="https://placehold.it/180x180"/></a>
+    <a href="#"><img src="https://placehold.it/180x180" /></a>
   </div>
   <h2 class="product-card-title"><a href="#">{{product_name}}</a></h2>
   <span class="product-card-desc">this is just a test</span>
   <span class="product-card-price">{{this.price}}</span><span class="product-card-sale"></span>
   <div class="product-card-colors">
-    <button href="#" class="product-card-color-option"><img src="https://placehold.it/30x30"/></button>
-    <button href="#" class="product-card-color-option"><img src="https://placehold.it/30x30"/></button>
-    <button href="#" class="product-card-color-option"><img src="https://placehold.it/30x30"/></button>
-    <button href="#" class="product-card-color-option"><img src="https://placehold.it/30x30"/></button>
+    <button href="#" class="product-card-color-option"><img src="https://placehold.it/30x30" /></button>
+    <button href="#" class="product-card-color-option"><img src="https://placehold.it/30x30" /></button>
+    <button href="#" class="product-card-color-option"><img src="https://placehold.it/30x30" /></button>
+    <button href="#" class="product-card-color-option"><img src="https://placehold.it/30x30" /></button>
   </div>
 </div>
 {{/each}} --}}
