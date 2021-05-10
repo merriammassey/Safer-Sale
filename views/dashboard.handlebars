@@ -1,29 +1,27 @@
-
-
 <link rel="stylesheet" href="/stylesheets/post.css">
 
 
 
-<form class="form-style-9 new-post-form">
-<ul>
-<li>
-    <input type="text" class="field-style field-split align-left" placeholder="Title" name= "item-post" />
+<form action="/api/posts" enctype="multipart/form-data" method="post" class="form-style-9 new-post-form">
+  <ul>
+    <li>
+      <input type="text" class="field-style field-split align-left" placeholder="Title" name="title" />
+    </li>
+    <li>
+      <input type="text" class="field-style field-split align-left" placeholder="Price" name="price" />
+    </li>
+    <li>
+      <textarea class="field-style" placeholder="Item Description" name="description"></textarea>
+      <label for="file-to-upload">Select image:</label>
+      <input type="file" name="file-to-upload">
 
-</li>
-<li>
-    <input type="text" class="field-style field-split align-left" placeholder="Price" name="price-post"/>
-    
-</li>
-<li>
-<textarea name="field5" class="field-style" placeholder="Item Description" name= "description-post"></textarea>
-    <label for="img">Select image:</label>
-    <input type="file" id="img" name="img" accept="image/*">
-  </div>
-</li>
-<li>
-<input type="submit" value="Add Item" />
-</li>
-</ul>
+      <!--<input type="file" id="img" name="img" accept="image/*">-->
+      </div>
+    </li>
+    <li>
+      <input type="submit" value="Add Item" />
+    </li>
+  </ul>
 </form>
 
 
@@ -42,7 +40,7 @@
 </section>
 {{/if}}
 
-<script src= "/javascript/post-product.js" ></script>
+<!--<script src="/javascript/post-product.js"></script>-->
 
 
 {{!-- {{#each Post}}

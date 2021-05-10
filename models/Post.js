@@ -24,7 +24,7 @@ Post.init(
       allowNull: false,
     },
     image: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: true,
     },
     user_id: {
@@ -34,9 +34,9 @@ Post.init(
         key: "id",
       },
     },
-    location: {
-      type: DataTypes.STRING,
-    },
+    //location: {
+    //type: DataTypes.STRING,
+    //},
   },
   {
     sequelize,
