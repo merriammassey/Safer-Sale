@@ -11,7 +11,7 @@
 <body>
   <div class="wrapper">
     <div class="product-img">
-      <img src="https://images.unsplash.com/photo-1505751171710-1f6d0ace5a85?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80" height="420" width="325">
+      <img src={{this.image_url}} height="420" width="325">
     </div>
     <div class="product-info">
       <div class="product-text">
@@ -21,7 +21,7 @@
       </div>
       <div class="product-price-btn">
         <p><span>{{this.price}}</span>$</p>
-        <button type="button">(email to seller)Contact Seller</button>
+         <button type="button" class ="email-owner"><a href="mailto:{{user.email}}">Contact Seller</a>
       </div>
     </div>
   </div>

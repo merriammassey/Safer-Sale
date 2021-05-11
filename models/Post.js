@@ -23,15 +23,17 @@ Post.init(
       type: DataTypes.DECIMAL,
       allowNull: false,
     },
+    image_url: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
         model: "user",
         key: "id",
       },
-    },
-    location: {
-      type: DataTypes.STRING
     },
   },
   {
