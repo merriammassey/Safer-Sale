@@ -16,9 +16,11 @@
     
 </li>
 <li>
-<textarea name="field5" class="field-style" placeholder="Item Description" name= "description-post"></textarea>
-    <label for="img">Select image:</label>
-    <input type="file" id="img" name="img" accept="image/*">
+<textarea class="field-style" placeholder="Item Description" name= "description-post"></textarea>
+   <img src="https://images.unsplash.com/photo-1505751171710-1f6d0ace5a85?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80" height="300" width="350" id="imgPreview" name="imgPreview"/>
+    <label for="img">Select image:
+    <input type="file" id="imgUpload" name="img" accept="image/*">
+    </label>
   </div>
 </li>
 <li>
@@ -46,7 +48,7 @@
 {{/if}}
 
 <script src= "/javascript/post-product.js" ></script>
-
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 {{!-- {{#each Post}}
 <div class="product-card">
