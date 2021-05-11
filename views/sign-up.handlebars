@@ -3,6 +3,7 @@
 
 <section class="signup-form">
 
+
   <form action="javascript:void(0);" class="callout text-center" style="margin-top: 0%;">
     <h2>Start Selling Now</h2>
     <div class="floated-label-wrapper">
@@ -45,21 +46,3 @@
   </form> -->
 
 </section>
-
-<script>$(function () {
-    var showClass = 'show';
-
-    $('input').on('checkval', function () {
-      var label = $(this).prev('label');
-      if (this.value !== '') {
-        label.addClass(showClass);
-      } else {
-        label.removeClass(showClass);
-      }
-    }).on('keyup', function () {
-      $(this).trigger('checkval');
-    });
-  });
-
-</script>
-<script src="/javascript/login.js"></script>

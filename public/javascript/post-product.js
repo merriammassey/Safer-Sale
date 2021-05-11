@@ -1,3 +1,39 @@
+const Cloudinary_URL=  "https://api.cloudinary.com/v1_1/dozz8shrp/upload";
+const Cloudinary_Upload_Preset = "r36r3yym"; 
+
+var imgPreview = document.getElementById('imgPreview')
+var imgUpload = document.querySelector('#imgUpload')
+
+
+imgUpload.addEventListener('change', function(e) {
+ const imgFile = e.target.files[0];
+const formData = new FormData();
+
+formData.append('file', imgFile)
+formData.append('upload_preset', Cloudinary_Upload_Preset);
+
+
+axios({
+  url: Cloudinary_URL,
+  method: 'Post',
+  headers: {
+    'Content-Type': 'application/x-www-form-urlencoded'
+  },
+  data: formData
+ }).then(function(res) {
+   imgPreview.src = res.data.secure_url
+   image = res.data.secure_url
+    console.log(image) 
+
+ }) .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+
+ })
+
+
+
 async function newFormHandler(event) {
   event.preventDefault();
 
@@ -9,6 +45,7 @@ async function newFormHandler(event) {
   console.log(url);
 
   const title = document.querySelector('input[name="item-post"]').value;
+<<<<<<< HEAD
   const description = document.querySelector(
     'textarea[name="description-post"]'
   ).value;
@@ -16,25 +53,41 @@ async function newFormHandler(event) {
   //const image = document.querySelector('input[name="img"]').value;
 
   const response = await fetch(`/api/posts`, {
+=======
+  const description = document.querySelector('textarea[name="description-post"]').value;
+  const price = document.querySelector('input[name="price-post"]').value;
+  const image = document.querySelector('#imgPreview').src;
+  
+  let response = await fetch(`/api/posts`, {
+>>>>>>> aa875a52fb1bb2aad3ca17fcb16a0e5825197c9c
     method: "POST",
     body: JSON.stringify({
       title,
       description,
       price,
-      image_url,
-    }),
+      image,
+    }),  
     headers: {
       "Content-Type": "application/json",
-    },
-  });
-  console.log(response);
+    },  
+  });  
+  console.log(response)
   if (response.ok) {
     document.location.replace("/dashboard");
   } else {
-    alert(response.statusText);
-  }
-}
+    console.log('didnt work')
+    // alert(response.statusText);
+  }  
+}  
 
 document
   .querySelector(".new-post-form")
   .addEventListener("submit", newFormHandler);
+document.querySelector(".new-post-form").addEventListener("submit", newFormHandler);
+
+
+
+
+//uploading image
+
+

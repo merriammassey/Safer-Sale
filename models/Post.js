@@ -34,9 +34,6 @@ Post.init(
         key: "id",
       },
     },
-    //location: {
-    //type: DataTypes.STRING,
-    //},
   },
   {
     sequelize,

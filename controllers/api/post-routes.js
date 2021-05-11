@@ -33,44 +33,6 @@ router.get("/", (req, res) => {
       res.status(500).json(err);
     });
 });
-/*
-//create a post
-router.post("/", (req, res) => {
-  Post.create({
-    title: req.body.title,
-    description: req.body.description,
-    price: req.body.price,
-    user_id: req.session.user_id,
-    //location: req.body.location,
-  })
-    .then((dbPostData) => res.json(dbPostData))
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
-*/
-
-/*create a post
-router.post("/", upload.single("file-to-upload"), async (req, res) => {
-  Post.create({
-    title: req.body.title,
-    description: req.body.description,
-    price: req.body.price,
-    user_id: req.session.user_id,
-    //location: req.body.location,
-    image_url: await s3upload(
-      req.file.originalname,
-      fs.readFileSync(req.file.path)
-    ),
-  })
-    .then((dbPostData) => res.json(dbPostData))
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
-*/
 
 router.post("/", upload.single("file-to-upload"), async (req, res) => {
   const url = await s3upload(
@@ -87,6 +49,8 @@ router.post("/", upload.single("file-to-upload"), async (req, res) => {
     user_id: req.session.user_id,
 
     //location: req.body.location,
+    //image: req.body.image,
+    //user_id: req.body.user_id,
   })
     .then((dbPostData) => res.json(dbPostData))
     .catch((err) => {
