@@ -33,6 +33,7 @@ router.post("/", (req, res) => {
     title: req.body.title,
     description: req.body.description,
     price: req.body.price,
+    image_url: req.body.image_url,
     user_id: req.body.user_id,
    
   })

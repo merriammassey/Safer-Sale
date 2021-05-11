@@ -40,7 +40,7 @@ async function newFormHandler(event) {
   const title = document.querySelector('input[name="item-post"]').value;
   const description = document.querySelector('textarea[name="description-post"]').value;
   const price = document.querySelector('input[name="price-post"]').value;
-  const image_Url = document.querySelector('img[name="imgPreview"]').value;
+  const image_url = document.querySelector('#imgPreview').src;
   
   let response = await fetch(`/api/posts`, {
     method: "POST",
@@ -48,7 +48,7 @@ async function newFormHandler(event) {
       title,
       description,
       price,
-      image_Url,
+      image_url,
     }),  
     headers: {
       "Content-Type": "application/json",
