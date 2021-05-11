@@ -1,15 +1,5 @@
 const router = require("express").Router();
-<<<<<<< HEAD
-<<<<<<< HEAD
 const { User, Post, Comment} = require("../../models");
-
-=======
-
-const { User, Post, Comment } = require("../../models");
->>>>>>> 7940f979b280fcb0379cfefd8018302474947cb5
-=======
-const { User, Post, Comment } = require("../../models");
->>>>>>> 4a0d85715e0a1590b5c15807c223e4ce305bc565
 
 // get all users
 router.get("/", (req, res) => {
