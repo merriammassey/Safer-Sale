@@ -16,7 +16,7 @@ router.get("/", (req, res) => {
       },
       {
         model: User,
-        attributes: ["username"],
+        attributes: ["username", "location"],
       },
     ],
   })
@@ -33,8 +33,9 @@ router.post("/", (req, res) => {
     title: req.body.title,
     description: req.body.description,
     price: req.body.price,
+    image_url: req.body.image_url,
     user_id: req.body.user_id,
-    location: req.body.location,
+   
   })
     .then((dbPostData) => res.json(dbPostData))
     .catch((err) => {
