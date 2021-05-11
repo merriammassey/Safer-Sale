@@ -1,7 +1,31 @@
+<link rel="stylesheet" href="/stylesheets/login.css">
 <link rel="stylesheet" href="/stylesheets/post.css">
 
 
+<section class="signup-form">
 
+  <form action="/api/posts" enctype="multipart/form-data" method="post" class="callout text-center">
+    <h2>Sell Your Stuff</h2>
+    <div class="floated-label-wrapper">
+      <label for="Title">Title</label>
+      <input type="text" id="full-name" placeholder="Title" name="title" />
+    </div>
+    <div class="floated-label-wrapper">
+      <label for="Price">Price</label>
+      <input type="text" placeholder="Price" name="price" />
+    </div>
+    <div class="floated-label-wrapper">
+      <label for="Description">Description</label>
+      <textarea class="field-style" placeholder="Item Description" name="description"></textarea>
+    </div>
+    <div class="floated-label-wrapper">
+      <label for="file-to-upload">Select image:</label>
+      <input type="file" name="file-to-upload">
+    </div>
+    <input class="button expanded" type="submit" value="Add Item">
+  </form>
+</section>
+<!--
 <form action="/api/posts" enctype="multipart/form-data" method="post" class="form-style-9 new-post-form">
   <ul>
     <li>
@@ -14,15 +38,13 @@
       <textarea class="field-style" placeholder="Item Description" name="description"></textarea>
       <label for="file-to-upload">Select image:</label>
       <input type="file" name="file-to-upload">
-
-      <!--<input type="file" id="img" name="img" accept="image/*">-->
       </div>
     </li>
     <li>
       <input type="submit" value="Add Item" />
     </li>
   </ul>
-</form>
+</form>-->
 
 
 
@@ -59,3 +81,19 @@
   </div>
 </div>
 {{/each}} --}}
+<script>$(function () {
+    var showClass = 'show';
+
+    $('input').on('checkval', function () {
+      var label = $(this).prev('label');
+      if (this.value !== '') {
+        label.addClass(showClass);
+      } else {
+        label.removeClass(showClass);
+      }
+    }).on('keyup', function () {
+      $(this).trigger('checkval');
+    });
+  });
+
+</script>

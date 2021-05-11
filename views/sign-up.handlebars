@@ -3,6 +3,27 @@
 
 <section class="signup-form">
 
+  <form action="javascript:void(0);" class="callout text-center" style="margin-top: 0%;">
+    <h2>Start Selling Now</h2>
+    <div class="floated-label-wrapper">
+      <label for="username">User Name</label>
+      <input type="text" id="full-name" name="username" id="username-signup" placeholder="User name" autocomplete="off"
+        required />
+    </div>
+    <div class="floated-label-wrapper">
+      <label for="useremail">User Email</label>
+      <input type="email" id="email" name="useremail" id="email-signup" placeholder="Email address" autocomplete="off"
+        required />
+    </div>
+    <div class="floated-label-wrapper">
+      <label for="password">Password</label>
+      <input type="password" id="pass" name="password" id="password-signup" placeholder="Password" autocomplete="off"
+        class="form-control-material" required />
+    </div>
+    <input class="button expanded" type="submit" value="Sell my stuff">
+  </form>
+
+  <!--
   <form action="javascript:void(0);" class="form-style-9" style="margin-top: 0%;">
     <h1>Start Selling Now</h1>
     <div class="form-input-material">
@@ -21,8 +42,24 @@
         class="form-control-material" required />
     </div>
     <button type="submit" class="btn btn-primary btn-ghost">Sign Up</button>
-  </form>
+  </form> -->
 
 </section>
 
+<script>$(function () {
+    var showClass = 'show';
+
+    $('input').on('checkval', function () {
+      var label = $(this).prev('label');
+      if (this.value !== '') {
+        label.addClass(showClass);
+      } else {
+        label.removeClass(showClass);
+      }
+    }).on('keyup', function () {
+      $(this).trigger('checkval');
+    });
+  });
+
+</script>
 <script src="/javascript/login.js"></script>
