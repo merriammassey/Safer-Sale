@@ -71,6 +71,10 @@ router.get("/post/:id", (req, res) => {
     });
 });
 
+router.get('/api/posts', (req, res) => {
+  res.render("dashboard");
+})
+
 router.get("/login", (req, res) => {
   res.render("login");
 });

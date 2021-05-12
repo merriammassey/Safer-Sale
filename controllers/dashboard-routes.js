@@ -87,4 +87,8 @@ router.get("/edit/:id", withAuth, (req, res) => {
     });
 });
 
+router.get("/api/posts", (req, res) => {
+  res.render("dashboard");
+});
+
 module.exports = router;
