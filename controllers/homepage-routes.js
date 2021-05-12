@@ -51,7 +51,7 @@ router.get("/post/:id", (req, res) => {
       },
       {
         model: User,
-        attributes: ["username","location"],
+        attributes: ["username", "location"],
       },
     ],
   })
@@ -63,16 +63,13 @@ router.get("/post/:id", (req, res) => {
 
       const post = dbPostData.get({ plain: true });
 
-      res.render("single-post", {post,loggedIn: req.session.loggedIn,
-      });
+      res.render("single-post", { post, loggedIn: req.session.loggedIn });
     })
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
 });
-
-
 
 router.get("/login", (req, res) => {
   res.render("login");
@@ -82,13 +79,17 @@ router.get("/signup", (req, res) => {
   res.render("sign-up");
 });
 
-
 router.get("/dashboard", (req, res) => {
   res.render("dashboard");
 });
 
-router.get("/", (req, res) => {
-  res.render("logout");
+router.get("/login", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
+
+  res.render("login");
 });
 
 router.get("/create-post", (req, res) => {
