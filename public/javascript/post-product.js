@@ -45,7 +45,6 @@ async function newFormHandler(event) {
   console.log(url);
 
   const title = document.querySelector('input[name="item-post"]').value;
-<<<<<<< HEAD
   const description = document.querySelector(
     'textarea[name="description-post"]'
   ).value;
@@ -53,13 +52,6 @@ async function newFormHandler(event) {
   //const image = document.querySelector('input[name="img"]').value;
 
   const response = await fetch(`/api/posts`, {
-=======
-  const description = document.querySelector('textarea[name="description-post"]').value;
-  const price = document.querySelector('input[name="price-post"]').value;
-  const image = document.querySelector('#imgPreview').src;
-  
-  let response = await fetch(`/api/posts`, {
->>>>>>> aa875a52fb1bb2aad3ca17fcb16a0e5825197c9c
     method: "POST",
     body: JSON.stringify({
       title,
