@@ -15,7 +15,7 @@ router.post("/", upload.single("file-to-upload"), async (req, res) => {
 
   Post.update(
     {
-      image_Url: url,
+      image: url,
     },
     {
       where: {

@@ -23,10 +23,9 @@ Post.init(
       type: DataTypes.DECIMAL,
       allowNull: false,
     },
-    image_url: {
-      type: DataTypes.STRING,
+    image: {
+      type: DataTypes.TEXT,
       allowNull: true,
-      
     },
     user_id: {
       type: DataTypes.INTEGER,

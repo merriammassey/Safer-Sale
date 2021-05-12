@@ -22,8 +22,8 @@ axios({
   data: formData
  }).then(function(res) {
    imgPreview.src = res.data.secure_url
-   image_url = res.data.secure_url
-    console.log(image_url) 
+   image = res.data.secure_url
+    console.log(image) 
 
  }) .catch((err) => {
       console.log(err);
@@ -37,18 +37,35 @@ axios({
 async function newFormHandler(event) {
   event.preventDefault();
 
+  const url = await s3upload(
+    //req.file.originalname,
+    document.querySelector('input[name="img"]').value,
+    fs.readFileSync(req.file.path)
+  );
+  console.log(url);
+
   const title = document.querySelector('input[name="item-post"]').value;
+<<<<<<< HEAD
+  const description = document.querySelector(
+    'textarea[name="description-post"]'
+  ).value;
+  const price = document.querySelector('input[name="price-post"]').value;
+  //const image = document.querySelector('input[name="img"]').value;
+
+  const response = await fetch(`/api/posts`, {
+=======
   const description = document.querySelector('textarea[name="description-post"]').value;
   const price = document.querySelector('input[name="price-post"]').value;
-  const image_url = document.querySelector('#imgPreview').src;
+  const image = document.querySelector('#imgPreview').src;
   
   let response = await fetch(`/api/posts`, {
+>>>>>>> aa875a52fb1bb2aad3ca17fcb16a0e5825197c9c
     method: "POST",
     body: JSON.stringify({
       title,
       description,
       price,
-      image_url,
+      image,
     }),  
     headers: {
       "Content-Type": "application/json",
@@ -63,6 +80,9 @@ async function newFormHandler(event) {
   }  
 }  
 
+document
+  .querySelector(".new-post-form")
+  .addEventListener("submit", newFormHandler);
 document.querySelector(".new-post-form").addEventListener("submit", newFormHandler);
 
 
