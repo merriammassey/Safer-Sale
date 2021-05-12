@@ -23,7 +23,7 @@ Post.init(
       type: DataTypes.DECIMAL,
       allowNull: false,
     },
-    image_url: {
+    image: {
       type: DataTypes.STRING,
       allowNull: true,
       defaultValue: null,
