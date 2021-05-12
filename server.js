@@ -11,8 +11,9 @@ const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 const helpers = require("./utils/helpers");
 const hbs = exphbs.create({ helpers });
+
 const sess = {
-  secret: "Super secret secret",
+  secret: "Super secret",
   cookie: {},
   resave: false,
   saveUninitialized: true,

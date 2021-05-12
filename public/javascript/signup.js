@@ -20,6 +20,7 @@ async function signupFormHandler(event) {
     if (response.ok) {
       console.log(response);
       console.log("success");
+      document.location.replace("/dashboard/");
     } else {
       alert(response.statusText);
     }
@@ -27,5 +28,4 @@ async function signupFormHandler(event) {
 }
 
 
-document.querySelector(".signup-form")
-  .addEventListener("submit", signupFormHandler);
+document.querySelector(".signup-form").addEventListener("submit", signupFormHandler);

@@ -24,11 +24,14 @@
   <a href="/" class="logo">Safer Sale</a>
   <div class="header-right">
     <a class="active" href="/">Home</a>
-    <a href="/login">My Account</a>
-    <a href="/signup">Sign Up</a>
-    <a href="#about">About Us</a>
+    {{#if loggedIn}}
     <a href="/dashboard">Dashboard</a>
     <a href="/">logout</a>
+    {{else}}
+    <a href="/login">My Account</a>
+     <a href="/signup">Sign Up</a>
+    <a href="#about">About Us</a>
+  {{/if}}
 <div id="searchsection">
   <input type="text" name= "searchBar" id='searchBar' placeholder='Search'/>
  <button id='searchButton'>Search</button> 
@@ -39,13 +42,7 @@
 
     <div>
       <h1>The safer place to sell your stuff</h1></br>
-      <!--add this to the about us page
-    <p>One person's junk is another's treasure and we are dedicated to helping you perform those transactions safely</p>-->
     </div>
-
-</body>
-
-</html>
 
 <body>
 
@@ -54,14 +51,13 @@
     {{{ body }}}
   </main>
   <footer>
-    <!--Thanks for Shopping!-->
+    Thanks for Shopping!
   </footer>
   </div>
 
-  {{!-- {{#if loggedIn}} --}}
+{{#if loggedIn }}
   <script src="/javascript/logout.js"></script>
-  <script src='/javascript/search.js'></script>
-  {{!-- {{/if}} --}}
+  {{/if}}
 </body>
 
 </html>
