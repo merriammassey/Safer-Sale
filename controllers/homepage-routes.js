@@ -4,7 +4,7 @@ const { Post, User, Comment } = require("../models");
 
 router.get("/", (req, res) => {
   Post.findAll({
-    attributes: ["id", "title", "description", "price","image_url", "created_at"],
+    attributes: ["id", "title", "description", "price", "image", "created_at"],
     include: [
       {
         model: Comment,
@@ -26,7 +26,7 @@ router.get("/", (req, res) => {
       const posts = dbPostData.map((post) => post.get({ plain: true }));
       console.log(posts);
       //res.render("homepage", {msg: 'this is the homepage'})
-      res.render("homepage", {posts});
+      res.render("homepage", { posts });
     })
     .catch((err) => {
       console.log(err);
@@ -51,7 +51,7 @@ router.get("/post/:id", (req, res) => {
       },
       {
         model: User,
-        attributes: ["username","location"],
+        attributes: ["username", "location"],
       },
     ],
   })
@@ -63,16 +63,13 @@ router.get("/post/:id", (req, res) => {
 
       const post = dbPostData.get({ plain: true });
 
-      res.render("single-post", {post,loggedIn: req.session.loggedIn,
-      });
+      res.render("single-post", { post, loggedIn: req.session.loggedIn });
     })
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
 });
-
-
 
 router.get("/login", (req, res) => {
   res.render("login");
@@ -81,7 +78,6 @@ router.get("/login", (req, res) => {
 router.get("/signup", (req, res) => {
   res.render("sign-up");
 });
-
 
 router.get("/dashboard", (req, res) => {
   res.render("dashboard");
@@ -94,6 +90,14 @@ router.get("/login", (req, res) => {
   }
 
   res.render("login");
+});
+
+router.get("/create-post", (req, res) => {
+  res.render("create-post");
+});
+
+router.get("/upload-image", (req, res) => {
+  res.render("upload-image");
 });
 
 module.exports = router;

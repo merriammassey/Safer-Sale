@@ -1,5 +1,12 @@
 const router = require("express").Router();
 const { Post, User, Comment } = require("../../models");
+const fs = require("fs");
+const sequelize = require("../../config/connection.js");
+const s3upload = require("../../utils/uploadToS3.js");
+const multer = require("multer");
+const upload = multer({
+  dest: "uploads/", // this saves your file into a directory called "uploads"
+});
 
 //get all posts //filter by location and title? and category?
 router.get("/", (req, res) => {
@@ -27,15 +34,23 @@ router.get("/", (req, res) => {
     });
 });
 
-//create a post
-router.post("/", (req, res) => {
+router.post("/", upload.single("file-to-upload"), async (req, res) => {
+  const url = await s3upload(
+    req.file.originalname,
+    fs.readFileSync(req.file.path)
+  );
+  console.log(url);
+  console.log(req.body);
   Post.create({
     title: req.body.title,
     description: req.body.description,
     price: req.body.price,
-    image_url: req.body.image_url,
-    user_id: req.body.user_id,
-   
+    image: url,
+    user_id: req.session.user_id,
+
+    //location: req.body.location,
+    //image: req.body.image,
+    //user_id: req.body.user_id,
   })
     .then((dbPostData) => res.json(dbPostData))
     .catch((err) => {
@@ -92,8 +107,4 @@ router.delete("/:id", (req, res) => {
     });
 });
 
-
 module.exports = router;
-
-
-

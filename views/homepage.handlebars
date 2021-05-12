@@ -1,17 +1,16 @@
-
-
 {{#each posts}}
 <html lang="en">
 
 <head>
   <title>Harvest vase</title>
-  <link href="https://fonts.googleapis.com/css?family=Bentham|Playfair+Display|Raleway:400,500|Suranna|Trocchi" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Bentham|Playfair+Display|Raleway:400,500|Suranna|Trocchi"
+    rel="stylesheet">
 </head>
 
 <body>
   <div class="wrapper">
     <div class="product-img">
-      <img src={{this.image_url}} height="420" width="325">
+      <img src={{this.image}} height="420" width="325">
     </div>
     <div class="product-info">
       <div class="product-text">
@@ -21,7 +20,7 @@
       </div>
       <div class="product-price-btn">
         <p><span>{{this.price}}</span>$</p>
-         <button type="button" class ="email-owner"><a href="mailto:{{user.email}}">Contact Seller</a>
+        <button type="button" class="email-owner"><a href="mailto:{{user.email}}">Contact Seller</a>
       </div>
     </div>
   </div>
@@ -30,6 +29,3 @@
 
 </html>
 {{/each}}
-
-
-
