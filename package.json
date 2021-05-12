@@ -23,8 +23,8 @@
   },
   "homepage": "https://github.com/ashivvers95/Resource-Co-op#readme",
   "dependencies": {
-    "@aws-sdk/client-s3": "^3.14.0",
-    "aws-sdk": "^2.903.0",
+    "@aws-sdk/client-s3": "^3.15.0",
+    "aws-sdk": "^2.905.0",
     "axios": "^0.21.1",
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.1",
