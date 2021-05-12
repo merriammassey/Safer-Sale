@@ -35,7 +35,10 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", upload.single("file-to-upload"), async (req, res) => {
-  //update photos set filename = replace(filename, ' ', '_');
+  // testing ways to remove spaces from file name or send alert
+  //if (req.file.originalname.indexOf(" ") !== -1) {
+  //create modal
+  //.replace(" ", "")
   const url = await s3upload(
     req.file.originalname,
     fs.readFileSync(req.file.path)
