@@ -1,68 +1,63 @@
-var inputSearch = document.getElementById('searchBar');
+var inputSearch = document.getElementById("#searchBar");
+var libraryButton = document.querySelector(".library-searchButton");
+var mallButton = document.querySelector(".shopping_mall-searchButton");
+var policeButton = document.querySelector(".police_station-searchButton");
 
-var map;
+var nameLocation = document.querySelector(".name");
+var address = document.querySelector(".address");
+var openLocation = document.querySelector(".open");
 
-var selectAutocompleteOptions = {
-    location: inputSearch,
-    radius: '500',
-    types: ['(library)']
-};
+libraryButton.addEventListener("click", function () {
+  fetch(
+    "https://thingproxy.freeboard.io/fetchhttps://maps.googleapis.com/maps/api/place/textsearch/json?query=library+in+" +
+      inputSearch.value +
+      "&key=AIzaSyBBlNIHoJ1O1S0XMqeTTKXXISgTn6y3rbA"
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      var nameValue = data["results"]["name"];
+      var addressValue = data["results"]["formatted_address"];
+      var openValue = data["results"]["opening_hours"]["open_now"];
 
-// map = new google.maps.Map(document.getElementById('map'), {
-//     center: new google.maps.LatLng(-33.8665433, 151.1956316),
-//     zoom: 15
-// });
+      nameLocation.innerHtml = "Location name: " + nameValue;
+      address.innerHtml = " Location address: " + addressValue;
+      openLocation.innerHtml = "Location open: " + openValue;
+    });
+});
 
-// selectAutocomplete = new google.maps.places.Autocomplete(inputSearch, selectAutocompleteOptions);
-// selectAutocomplete.nearbySearch(selectAutocompleteOptions, callback);
+mallButton.addEventListener("click", function () {
+  fetch(
+    "https://thingproxy.freeboard.io/fetchhttps://maps.googleapis.com/maps/api/place/textsearch/json?query=shopping_mall+in+" +
+      inputSearch.value +
+      "&key=AIzaSyBBlNIHoJ1O1S0XMqeTTKXXISgTn6y3rbA"
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      var nameValue = data["results"]["name"];
+      var addressValue = data["results"]["formatted_address"];
+      var openValue = data["results"]["opening_hours"]["open_now"];
 
-// google.maps.event.addListener(selectAutocomplete, 'searchButton', function () {
-//     console.log(results);
-//});
+      nameLocation.innerHtml = "Location name: " + nameValue;
+      address.innerHtml = " Location address: " + addressValue;
+      openLocation.innerHtml = "Location open: " + openValue;
+    });
+});
 
+policeButton.addEventListener("click", function () {
+  fetch(
+    "https://thingproxy.freeboard.io/fetchhttps://maps.googleapis.com/maps/api/place/textsearch/json?query=police_station+in+" +
+      inputSearch.value +
+      "&key=AIzaSyBBlNIHoJ1O1S0XMqeTTKXXISgTn6y3rbA"
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      var nameValue = data["results"]["name"];
+      var addressValue = data["results"]["formatted_address"];
+      var openValue = data["results"]["opening_hours"]["open_now"];
 
-fetch('https://thingproxy.freeboard.io/fetchhttps://maps.googleapis.com/maps/api/place/textsearch/json?query=library+in+'
- + inputSearch.value + 
- '&key=AIzaSyBBlNIHoJ1O1S0XMqeTTKXXISgTn6y3rbA')
-  .then(response => response.json())
-  .then(data => console.log(data));
+      nameLocation.innerHtml = "Location name: " + nameValue;
+      address.innerHtml = " Location address: " + addressValue;
+      openLocation.innerHtml = "Location open: " + openValue;
+    });
+});
 
-  fetch('https://thingproxy.freeboard.io/fetchhttps://maps.googleapis.com/maps/api/place/textsearch/json?query=shopping_mall+in+'
-  + inputSearch.value + 
-  '&key=AIzaSyBBlNIHoJ1O1S0XMqeTTKXXISgTn6y3rbA')
-   .then(response => response.json())
-   .then(data => console.log(data));
-
-   fetch('https://thingproxy.freeboard.io/fetchhttps://maps.googleapis.com/maps/api/place/textsearch/json?query=police_station+in+'
-   + inputSearch.value + 
-   '&key=AIzaSyBBlNIHoJ1O1S0XMqeTTKXXISgTn6y3rbA')
-    .then(response => response.json())
-    .then(data => console.log(data));
-
-
-// var map;
-// var service;
-// var infowindow;
-
-// function initialize() {
-
-//   map = new google.maps.Map(document.getElementById('map'), {
-//       center: new google.maps.LatLng(-33.8665433,151.1956316),
-//       zoom: 15
-//     });
-
-//   var request = {
-//     type: ['library']
-//   };
-
-//   service = new google.maps.places.PlacesService(map);
-//   service.nearbySearch(request, callback);
-// }
-
-function callback(results, status) {
-  if (status == google.maps.places.PlacesServiceStatus.OK) {
-    for (var i = 0; i < results.length; i++) {
-      createMarker(results[i]);
-    }
-  }
-}
