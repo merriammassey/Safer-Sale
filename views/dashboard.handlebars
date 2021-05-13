@@ -1,9 +1,6 @@
 
 
 
-Hello Name {{user.username}}
-
-{{username}}
 
 
 <link rel="stylesheet" href="/stylesheets/login.css">
@@ -12,7 +9,7 @@ Hello Name {{user.username}}
 
 <section class="signup-form">
 
-  <form enctype="multipart/form-data" method="post" class="callout text-center">
+  <form action="/api/posts" enctype="multipart/form-data" method="post" class="callout text-center">
     <h2>Sell Your Stuff</h2>
     <div class="floated-label-wrapper">
       <label for="Title">Title</label>
@@ -28,14 +25,11 @@ Hello Name {{user.username}}
     </div>
     <div class="floated-label-wrapper">
       <label for="file-to-upload">Select image:</label>
-      <input type="file" name="file-to-upload" name="img" accept="image/*">
-    {{!-- </div>
-     <label for="img">Select image:
-    <input type="file" id="imgUpload" name="img" accept="image/*"> --}}
+      <input type="file" name="file-to-upload">
+    </div>
     <input class="button expanded" type="submit" value="Add Item">
   </form>
 </section>
-
 
 {{#if posts.length}}
 <section>

@@ -1,5 +1,5 @@
 const router = require("express").Router();
-//const sequelize = require("../config/connection");
+const sequelize = require("../config/connection");
 const { Post, User, Comment } = require("../models");
 
 router.get("/", (req, res) => {
@@ -26,7 +26,7 @@ router.get("/", (req, res) => {
       const posts = dbPostData.map((post) => post.get({ plain: true }));
       console.log(posts);
       //res.render("homepage", {msg: 'this is the homepage'})
-      res.render("homepage", { posts });
+      res.render("homepage", { posts, loggedIn: req.session.loggedIn });
     })
     .catch((err) => {
       console.log(err);
@@ -92,16 +92,15 @@ router.get("/login", (req, res) => {
     res.redirect("/");
     return;
   }
-
   res.render("login");
 });
 
-router.get("/create-post", (req, res) => {
-  res.render("create-post");
-});
+// router.get("/create-post", (req, res) => {
+//   res.render("create-post");
+// });
 
-router.get("/upload-image", (req, res) => {
-  res.render("upload-image");
-});
+// router.get("/upload-image", (req, res) => {
+//   res.render("upload-image");
+// });
 
 module.exports = router;
