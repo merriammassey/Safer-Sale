@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "engines": {
+    "node": "14.16.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
@@ -20,10 +23,10 @@
   },
   "homepage": "https://github.com/ashivvers95/Resource-Co-op#readme",
   "dependencies": {
-    "@aws-sdk/client-s3": "^3.14.0",
-    "aws-sdk": "^2.903.0",
+    "@aws-sdk/client-s3": "^3.15.0",
+    "aws-sdk": "^2.905.0",
     "axios": "^0.21.1",
-    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
     "connect-session-sequelize": "^7.1.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
