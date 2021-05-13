@@ -17,14 +17,14 @@ async function signupFormHandler(event) {
     });
     //check the response status
     if (response.ok) {
-      console.log(response);
+      //console.log(response);
       console.log("success");
+      document.location.replace("/dashboard/");
     } else {
       alert(response.statusText);
     }
   }
 }
 
-document
-  .querySelector(".signup-form")
-  .addEventListener("submit", signupFormHandler);
+
+document.querySelector(".signup-form").addEventListener("submit", signupFormHandler);

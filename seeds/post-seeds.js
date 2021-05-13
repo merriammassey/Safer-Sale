@@ -14,6 +14,7 @@ const postdata = [
     description:
       "this is just aplace holding description for the website, jhdfjdfjhdfsjhdfsajhdfs",
     price: 35.0,
+    
     user_id: 8,
     image: "",
   },
