@@ -1,3 +1,8 @@
+
+
+
+
+
 <link rel="stylesheet" href="/stylesheets/login.css">
 <link rel="stylesheet" href="/stylesheets/post.css">
 
@@ -18,68 +23,19 @@
       <label for="Description">Description</label>
       <textarea class="field-style" placeholder="Item Description" name="description"></textarea>
     </div>
+    <!--testing the photo upload div to get "no file chosen" or the name of the file to display
+    <form class="floated-label-wrapper">
+      <input type="file" id="file-upload" name="file-to-upload" required />
+      <label for="file-upload">Select image</label>
+      <div id="file-upload-filename"></div>
+    </form>-->
     <div class="floated-label-wrapper">
+      <input style="color: black" type="file" name="file-to-upload" id="file-upload" required />
       <label for="file-to-upload">Select image:</label>
-      <input type="file" name="file-to-upload">
     </div>
     <input class="button expanded" type="submit" value="Add Item">
   </form>
 </section>
-<!--
-<form action="/api/posts" enctype="multipart/form-data" method="post" class="form-style-9 new-post-form">
-  <ul>
-    <li>
-      <input type="text" class="field-style field-split align-left" placeholder="Title" name="title" />
-    </li>
-    <li>
-      <input type="text" class="field-style field-split align-left" placeholder="Price" name="price" />
-    </li>
-    <li>
-      <textarea class="field-style" placeholder="Item Description" name="description"></textarea>
-      <label for="file-to-upload">Select image:</label>
-      <input type="file" name="file-to-upload">
-      </div>
-    </li>
-    <li>
-      <input type="submit" value="Add Item" />
-    </li>
-  </ul>
-</form>-->
-
-{{!-- {{#if loggedIn}} --}}
-<!--
-<h1>Hello {{user.username}}</h1>
-
-<link rel="stylesheet" href="/stylesheets/post.css">
-
-<form class="form-style-9 new-post-form">
-  <ul>
-    <li>
-      <input type="text" class="field-style field-split align-left" placeholder="Title" name="item-post" />
-
-    </li>
-    <li>
-      <input type="text" class="field-style field-split align-left" placeholder="Price" name="price-post" />
-
-    </li>
-    <li>
-      <textarea class="field-style" placeholder="Item Description" name="description-post"></textarea>
-      <img
-        src="https://images.unsplash.com/photo-1505751171710-1f6d0ace5a85?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80"
-        height="300" width="350" id="imgPreview" name="imgPreview" />
-      <label for="img">Select image:
-        <input type="file" id="imgUpload" name="img" accept="image/*">
-      </label>
-      </div>
-    </li>
-    <li>
-      <input type="submit" value="Add Item" />
-    </li>
-  </ul>
-</form> -->
-
-{{!-- {{/if}} --}}
-
 
 
 {{#if posts.length}}
@@ -96,22 +52,3 @@
 </section>
 {{/if}}
 
-<!--<script src="/javascript/post-product.js"></script>-->
-
-
-{{!-- {{#each Post}}
-<div class="product-card">
-  <div class="product-card-thumbnail">
-    <a href="#"><img src="https://placehold.it/180x180" /></a>
-  </div>
-  <h2 class="product-card-title"><a href="#">{{product_name}}</a></h2>
-  <span class="product-card-desc">this is just a test</span>
-  <span class="product-card-price">{{this.price}}</span><span class="product-card-sale"></span>
-  <div class="product-card-colors">
-    <button href="#" class="product-card-color-option"><img src="https://placehold.it/30x30" /></button>
-    <button href="#" class="product-card-color-option"><img src="https://placehold.it/30x30" /></button>
-    <button href="#" class="product-card-color-option"><img src="https://placehold.it/30x30" /></button>
-    <button href="#" class="product-card-color-option"><img src="https://placehold.it/30x30" /></button>
-  </div>
-</div>
-{{/each}} --}}

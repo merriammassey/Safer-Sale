@@ -15,6 +15,7 @@ router.get("/", withAuth, (req, res) => {
       "title",
       "description",
       "price",
+      "image",
       "user_id",
       "created_at",
     ],
@@ -29,7 +30,7 @@ router.get("/", withAuth, (req, res) => {
       },
       {
         model: User,
-        attributes: ["username"],
+        attributes: ["username", "location"],
       },
     ],
   })
@@ -50,6 +51,7 @@ router.get("/edit/:id", withAuth, (req, res) => {
       "title",
       "description",
       "price",
+      "image",
       "user_id",
       "created_at",
     ],
@@ -83,6 +85,10 @@ router.get("/edit/:id", withAuth, (req, res) => {
     .catch((err) => {
       res.status(500).json(err);
     });
+});
+
+router.get("/api/posts", (req, res) => {
+  res.render("dashboard");
 });
 
 module.exports = router;
