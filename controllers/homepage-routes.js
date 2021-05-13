@@ -95,12 +95,12 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
-// router.get("/create-post", (req, res) => {
-//   res.render("create-post");
-// });
+router.get("/create-post", (req, res) => {
+  res.render("create-post");
+});
 
-// router.get("/upload-image", (req, res) => {
-//   res.render("upload-image");
-// });
+router.get("/upload-image", (req, res) => {
+  res.render("upload-image");
+});
 
 module.exports = router;
