@@ -35,6 +35,10 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", upload.single("file-to-upload"), async (req, res) => {
+  // testing ways to remove spaces from file name or send alert
+  //if (req.file.originalname.indexOf(" ") !== -1) {
+  //create modal
+  //.replace(" ", "")
   const url = await s3upload(
     req.file.originalname,
     fs.readFileSync(req.file.path)
@@ -47,16 +51,13 @@ router.post("/", upload.single("file-to-upload"), async (req, res) => {
     price: req.body.price,
     image: url,
     user_id: req.session.user_id,
-
-    //location: req.body.location,
-    //image: req.body.image,
-    //user_id: req.body.user_id,
   })
     .then((dbPostData) => res.json(dbPostData))
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
+  res.redirect("/");
 });
 
 //update a post
