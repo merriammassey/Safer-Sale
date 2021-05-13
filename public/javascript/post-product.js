@@ -1,22 +1,13 @@
-<<<<<<< HEAD
 // const Cloudinary_URL=  "https://api.cloudinary.com/v1_1/dozz8shrp/upload";
 // const Cloudinary_Upload_Preset = "r36r3yym"; 
 
 // var imgPreview = document.getElementById('imgPreview')
 // var imgUpload = document.querySelector('#imgUpload')
-=======
-const Cloudinary_URL = "https://api.cloudinary.com/v1_1/dozz8shrp/upload";
-const Cloudinary_Upload_Preset = "r36r3yym";
 
-var imgPreview = document.getElementById("imgPreview");
-var imgUpload = document.querySelector("#imgUpload");
->>>>>>> main
+// imgUpload.addEventListener("change", function (e) {
+//   const imgFile = e.target.files[0];
+//   const formData = new FormData();
 
-imgUpload.addEventListener("change", function (e) {
-  const imgFile = e.target.files[0];
-  const formData = new FormData();
-
-<<<<<<< HEAD
 // imgUpload.addEventListener('change', function(e) {
 //  const imgFile = e.target.files[0];
 // const formData = new FormData();
@@ -45,29 +36,6 @@ imgUpload.addEventListener("change", function (e) {
 //  })
 
 
-=======
-  formData.append("file", imgFile);
-  formData.append("upload_preset", Cloudinary_Upload_Preset);
-
-  axios({
-    url: Cloudinary_URL,
-    method: "Post",
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
-    },
-    data: formData,
-  })
-    .then(function (res) {
-      imgPreview.src = res.data.secure_url;
-      image = res.data.secure_url;
-      console.log(image);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
->>>>>>> main
 
 async function newFormHandler(event) {
   event.preventDefault();
