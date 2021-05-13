@@ -1,5 +1,3 @@
-//const router = require('express').Router();
-
 var inputSearch = document.querySelector('#searchBar');
 var libraryButton = document.querySelector(".library-searchButton");
 var mallButton = document.querySelector(".shopping_mall-searchButton");
@@ -25,7 +23,7 @@ libraryButton.addEventListener("click", function () {
     //   nameLocation.innerHtml = "Location name: " + nameValue;
     //   address.innerHtml = "Location address: " + addressValue;
     //   openLocation.innerHtml = "Location open: " + openValue;
-    
+
         console.log(nameValue, addressValue, openValue)
     });
 });
@@ -38,9 +36,9 @@ mallButton.addEventListener("click", function () {
   )
     .then((response) => response.json())
     .then((data) => {
-      const nameValue = data["results"]["name"];
-      const addressValue = data["results"]["formatted_address"];
-      const openValue = data["results"]["opening_hours"]["open_now"];
+      const nameValue = data["results"][0]["name"];
+      const addressValue = data["results"][0]["formatted_address"];
+      const openValue = data["results"][0]["opening_hours"]["open_now"];
 
     //   nameLocation.innerHtml = "Location name: " + nameValue;
     //   address.innerHtml = " Location address: " + addressValue;
@@ -58,9 +56,9 @@ policeButton.addEventListener("click", function () {
   )
     .then((response) => response.json())
     .then((data) => {
-      const nameValue = data["results"]["name"];
-      const addressValue = data["results"]["formatted_address"];
-      const openValue = data["results"]["opening_hours"]["open_now"];
+      const nameValue = data["results"][0]["name"];
+      const addressValue = data["results"][0]["formatted_address"];
+      const openValue = data["results"][0]["opening_hours"]["open_now"];
 
     //   nameLocation.innerHtml = "Location name: " + nameValue;
     //   address.innerHtml = " Location address: " + addressValue;
